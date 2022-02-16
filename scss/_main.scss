@@ -1,0 +1,258 @@
+@mixin main-box($size, $color) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    background-color: $dark-gray;
+    width: $size;
+    height: 325px;
+    border-radius: 20px;
+    color: $color;
+    text-shadow: 1px 1px 3px $black;
+    text-align: center;
+    padding: 10px;
+}
+
+@mixin common-box($size, $color, $bg-color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    margin-top: 2em;
+    background-color: $bg-color;
+    width: $size;
+    border-radius: 20px;
+    color: $color;
+    text-shadow: 1px 1px 3px $black;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+@mixin gallery-port($size, $height, $mt) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    font-size: 2em;
+    width: $size;
+    height: $height;
+    // border: 1px solid white;
+    color: azure;
+    margin-top: $mt;
+
+    img {
+        width: 100%;
+        background-size: cover;
+        height: 250px;
+    }
+
+
+}
+
+// Mixin End
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3em;
+
+    h1 {
+        color: $neon-aqua;
+        text-shadow: 1px 1px 20px $white;
+    }
+}
+
+// Profile's CSS
+
+.profile-title {
+    padding: 2em;
+    display: flex;
+}
+
+.wrap-profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .text-profile {
+        @include main-box(40%, $white);
+
+        p {
+            letter-spacing: .1em;
+        }
+
+        .text-profile-top {
+            margin-bottom: 2em;
+        }
+    }
+
+    .img-profile {
+        @include main-box(25%, $white);
+        background-image: url(/img/profile.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+}
+
+// Experience's CSS
+
+.wrap-exp {
+    background-color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    width: 100%;
+    margin-top: 4em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    .exp-box {
+        @include common-box(80%, $white, $black);
+
+        .img-exp {
+
+            // background-color: aqua;
+            // width: 50px;
+            // height: 50px;
+            // margin-right: 15px;
+            img {
+                width: 150px;
+            }
+
+        }
+
+        .desc-exp {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+
+            p {
+                font-weight: bolder;
+                letter-spacing: .05em;
+            }
+        }
+    }
+
+}
+
+// Education's CSS
+
+.wrap-edu {
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    width: 100%;
+    padding-top: 3em;
+    padding-bottom: 4em;
+
+    .edu-box {
+        @include common-box(80%, $white, $dark-gray);
+
+        .img-edu {
+
+            // background-color: aqua;
+            // width: 50px;
+            // height: 50px;
+            // margin-right: 15px;
+            img {
+                width: 150px;
+            }
+
+        }
+
+        .desc-edu {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+
+            p {
+                font-weight: bolder;
+                letter-spacing: .05em;
+            }
+        }
+    }
+}
+
+
+
+// Portfolio's CSS
+
+.wrap-port {
+    background-color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    width: 100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    .port-top {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 3em;
+        width: 100%;
+        justify-content: space-around;
+
+        .gallery-port {
+            @include gallery-port(24%, 250px, 0);
+            margin-bottom: 10px;
+            position: relative;
+
+            .lightbox {
+                position: absolute;
+                opacity: 0;
+                padding: 1em 0 0 .5em;
+                width: 100%;
+                height: 100%;
+
+                h2 {
+                    font-size: 1em;
+                }
+
+                h3 {
+                    font-size: .6em;
+                }
+
+                input {
+                    padding: 10px 0;
+                    background-color: $neon-aqua;
+                    color: $dark-gray;
+                    font-weight: bold;
+                    letter-spacing: .5px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: .5em;
+                    overflow: hidden;
+                    width: 80px;
+
+                }
+
+                input:hover {
+                    color: #111;
+                    background: $neon-aqua;
+                    box-shadow: 0 0 50px $neon-aqua;
+                    cursor: pointer;
+                }
+            }
+
+            .lightbox:hover {
+                opacity: 1;
+                background-color: rgba(0, 0, 0, 0.623);
+            }
+        }
+
+    }
+}

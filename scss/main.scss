@@ -1,0 +1,33 @@
+$black : rgb(3, 3, 3);
+$salmon : rgb(255, 93, 75);
+$white : rgb(230, 230, 230);
+$neon-aqua : rgb(0, 255, 255);
+$dark-gray : rgb(42, 42, 42);
+$dark-blue : #25294a;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    background-color: rgb(14, 14, 14);
+    max-width: 1355px;
+    margin: auto;
+}
+
+.container {
+    width: 100%;
+    // border: 1px solid white;
+    margin: auto;
+}
+
+@import 'navbar';
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'responsive';

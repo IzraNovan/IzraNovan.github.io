@@ -1,0 +1,130 @@
+@media screen and (max-width: 605px) {
+
+    nav {
+        ul {
+            display: none;
+        }
+    }
+
+    header {
+
+        width: 100vh;
+        // border: 2px solid white;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3em;
+        width: 100vh;
+
+        h1 {
+            color: $neon-aqua;
+            text-shadow: 1px 1px 20px $white;
+        }
+    }
+
+    // Profile's CSS
+
+    .profile-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wrap-profile {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        align-content: space-around;
+        width: 100%;
+
+        .text-profile {
+            @include main-box(80%, $white)
+        }
+
+        .img-profile {
+            @include main-box(80%, $white)
+        }
+    }
+
+    .wrap-port {
+        background-color: $dark-gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        // overflow: hidden;
+
+        .port-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3em;
+            width: 100%;
+
+            .gallery-port {
+                @include gallery-port(80%, 300px, 2em);
+
+                .lightbox {
+                    position: absolute;
+                    opacity: 0;
+                    padding: 1em 0 0 .5em;
+                    width: 100%;
+                    height: 100%;
+
+                    h2 {
+                        font-size: 1em;
+                    }
+
+                    h3 {
+                        font-size: .6em;
+                    }
+
+                    input {
+                        padding: 10px 0;
+                        background-color: $neon-aqua;
+                        color: $dark-gray;
+                        font-weight: bold;
+                        letter-spacing: .5px;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        font-size: .5em;
+                        overflow: hidden;
+                        width: 80px;
+
+                    }
+
+                    input:hover {
+                        color: #111;
+                        background: $neon-aqua;
+                        box-shadow: 0 0 50px $neon-aqua;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: $black;
+
+            h2 {
+                color: white;
+                font-size: 2em;
+            }
+        }
+    }
+
+}
