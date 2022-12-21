@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../style";
-import Button from "./mini-components/Button";
+import Button from "./Button";
 import { robot } from "../assets";
 
 const Hero = () => {
